@@ -9,23 +9,18 @@ In this project, the cleaner robot cleans the room by finding its path using var
 - A*1: A* Search with Manhattan Distance to the closest dirt as the heuristics function.
 - A*2: A* Search with heuristic that is explained  in project report file.
 
-Input files look like this:
-xxxxxxxxxx
-x  1   1 x
-x   x  j x
-x j x  2 x
-x c x    x
-xxxxxxxxxx
+Input files look like this:  
+![image](https://user-images.githubusercontent.com/81170575/197387572-b8ca759c-eded-4b55-8995-4985a80de7a0.png)
 
-where:
-c is the agent(cleaner),
-x represents walls,
-<digits> represents dirts,
-j is the jumper  which moves the agent that moves an incoming agent to the next grid.
-  If the corresponding grid is occupied with an obstacle, the location of the agent will not change at all.
-  There are no jumpers placed next to each other.
+where:  
+c is the agent(cleaner),  
+x represents walls,  
+<digits> represents dirts,  
+j is the jumper  which moves the agent that moves an incoming agent to the next grid. 
+  If the corresponding grid is occupied with an obstacle, the location of the agent will not change at all. 
+  There are no jumpers placed next to each other. 
   
-The vacuum cleaner has five actions:
+The vacuum cleaner has five actions:  
   - left, right, up, down moves the cleaner one grid, unless that grid is an obstacle.
   - suck action that sucks one dirt. (in order to clean n dirts in a grid, suck action should be executed n times)
   
@@ -37,28 +32,32 @@ Costs of the actions:
 
 
 Tie-breaker:
-o Tie situations might occur during inserting into the fringe. The precedence used for fringe insertion tie-breaker is
+- Tie situations might occur during inserting into the fringe. The precedence used for fringe insertion tie-breaker is
 as follows: suck, left, right, down, up
-o For DFS and BFS, how to remove the nodes from the fringe is well-defined.
-o For others, if costs/g-values/f-values are same, respect the insertion order (first-in first-out).
+- For DFS and BFS, how to remove the nodes from the fringe is well-defined.
+- For others, if costs/g-values/f-values are same, respect the insertion order (first-in first-out).
 
 
 
 ## TO RUN THE CODE
 python cleaner_robot.py <search-type> <input_file>
+where <search-type> can be DFS, BFS, UCS, GS, A*1 or A*2
+  
 
-Example:
+Example Running Code:
 python cleaner_robot.py BFS init1.txt
 
-In the output, map is cleaned from dirts as:
-xxxxxxxxxx
-x        x
-x   x  j x
-x j x    x
-x c x    x
-xxxxxxxxxx
+In the output, map is cleaned from dirts as:  
+![image](https://user-images.githubusercontent.com/81170575/197387588-b0770a9e-8815-45be-87f2-551606ec64d2.png)
+
 ### Reporting:
-o the number of expanded nodes
-o the action sequence to achieve the goal
-o the cost of the solution
-o the heuristic function value of the initial state if the <search-type> is A*2.
+- the number of expanded nodes
+- the action sequence to achieve the goal
+- the cost of the solution
+- the heuristic function value of the initial state if the <search-type> is A*2.
+  
+Example Output:  
+python robot_cleaner.py BFS init1.txt  
+number of expanded nodes: 28  
+path: right down right right suck suck right suck   
+cost of the solution: 21  
