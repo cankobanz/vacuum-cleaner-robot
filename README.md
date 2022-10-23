@@ -1,4 +1,4 @@
-# room-cleaner-robot
+# vacuum-cleaner-robot
 Robot that cleans room from dirts. Finds the optimum path eventually.  Same algorithms are applied as in finding path to escape a maze. This project was the first homework of Artificial Intelligence course I have taken.
 
 In this project, the cleaner robot cleans the room by finding its path using various algorithms:
