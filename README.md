@@ -1,6 +1,16 @@
 # vacuum-cleaner-robot
 Robot that cleans room from dirts. Finds the optimum path eventually.  Same algorithms are applied as in finding path to escape a maze. This project was the first homework of Artificial Intelligence course I have taken.
 
+
+## TO RUN THE CODE
+    python cleaner_robot.py <search-type> <input_file>  
+where <search-type> can be DFS, BFS, UCS, GS, A*1 or A*2
+  
+
+Example Running Code:
+
+    python cleaner_robot.py BFS init1.txt
+
 In this project, the cleaner robot cleans the room by finding its path using various algorithms:
 - DFS: Depth First Search
 - BFS: Breadth First Search
@@ -37,15 +47,6 @@ as follows: suck, left, right, down, up
 - For DFS and BFS, how to remove the nodes from the fringe is well-defined.
 - For others, if costs/g-values/f-values are same, respect the insertion order (first-in first-out).
 
-
-
-## TO RUN THE CODE
-python cleaner_robot.py <search-type> <input_file>
-where <search-type> can be DFS, BFS, UCS, GS, A*1 or A*2
-  
-
-Example Running Code:
-python cleaner_robot.py BFS init1.txt
 
 In the output, map is cleaned from dirts as:  
 ![image](https://user-images.githubusercontent.com/81170575/197387588-b0770a9e-8815-45be-87f2-551606ec64d2.png)
